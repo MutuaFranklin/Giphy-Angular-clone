@@ -1,0 +1,32 @@
+<form class="d-flex">
+  <!-- <input class="form-control" type="search" placeholder="Search all GIFs and Stickers" aria-label="Search" gif(keyup.enter)="showSearchResults(gif.value)"> -->
+  <input type = "text" class="form-control" placeholder="Search all GIFs and Stickers"  aria-label="Search" name = "searchInput"  #searchInput id="searchInput" (keyup.enter)= "showSearchResults(searchInput.value)">
+  <!-- <button (click) = "showSearchResults(searchInput.value)" ></button> -->
+  <div class="searchBtn"><i class="fa fa-search fa-flip-horizontal fa-lg" (click) = "showSearchResults(searchInput.value)"></i></div>
+</form>
+<!--
+<div class="input-group mb-3" id="search">
+  <input type="text" class="form-control" placeholder="Search for gifs" name='inputSearch' aria-label="Recipient's username"  #inputSearch id='inputSearch' (keyup.enter)='inputGif(inputSearch.value)' aria-describedby="button-addon2">
+  <button class="btn btn-outline-secondary" type="button" id="button-addon2" (click)='inputGif(inputSearch.value)'>search</button>
+</div> -->
+
+
+<div class="trending">
+  <div class="header">
+    <div id="iconHeader">
+      Trending
+    </div>
+    <div id="allGifs">
+      <p>All the GIFs</p>
+    </div>
+  </div>
+
+  <div class="row" >
+      <div class="gif-item m-2" *ngFor="let gif of trending">
+        <!-- <img src="{{ gif.images.downsized.url }}" alt="" > -->
+
+        <img [src]=" gif.images.downsized.url" alt="" />
+      </div>
+
+  </div>
+</div>
